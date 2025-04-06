@@ -17,31 +17,40 @@ class AuthCubit extends Cubit<AuthStates> {
 
   Future<void> logIn(String email, String password) async {
     emit(AuthLogInLoadingState());
-    try {
-      authRepository.logIn(email, password);
-      emit(AuthLogInSuccessState());
-    } catch (error) {
-      emit(AuthLogInErrorState(error.toString()));
-    }
+
+    authRepository
+        .logIn(email, password)
+        .then((_) {
+          emit(AuthLogInSuccessState());
+        })
+        .catchError((error) {
+          emit(AuthLogInErrorState(error.code.toString()));
+        });
   }
 
   Future<void> register(String email, String password) async {
     emit(AuthRegisterLoadingState());
-    try {
-      authRepository.register(email, password);
-      emit(AuthRegisterSuccessState());
-    } catch (error) {
-      emit(AuthRegisterErrorState(error.toString()));
-    }
+
+    authRepository
+        .register(email, password)
+        .then((_) {
+          emit(AuthRegisterSuccessState());
+        })
+        .catchError((error) {
+          emit(AuthRegisterErrorState(error.code.toString()));
+        });
   }
 
-  Future<void> logOut(String email, String password) async {
-    emit(AuthRegisterLoadingState());
-    try {
-      authRepository.logOut();
-      emit(AuthRegisterSuccessState());
-    } catch (error) {
-      emit(AuthRegisterErrorState(error.toString()));
-    }
+  Future<void> logOut() async {
+    emit(AuthLogOutLoadingState());
+
+    authRepository
+        .logOut()
+        .then((_) {
+          emit(AuthLogOutSuccessState());
+        })
+        .catchError((error) {
+          emit(AuthLogOutErrorState(error.code.toString()));
+        });
   }
 }
