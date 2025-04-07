@@ -48,7 +48,7 @@ class HomeRepositoryImpl extends HomeRepository {
           'lang': 'en',
           'country': 'us',
           'q': query,
-          'apiKey': '8dc65983333c90f219a91b829a8e10cf',
+          'apikey': '8dc65983333c90f219a91b829a8e10cf',
         },
       );
       var data = response.data['articles'];
