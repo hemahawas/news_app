@@ -6,7 +6,7 @@ import 'package:news_app/core/shared_widgets/custom_dialog.dart';
 import 'package:news_app/core/shared_widgets/custom_icon.dart';
 import 'package:news_app/features/auth/presentation/view_model/cubit.dart';
 import 'package:news_app/features/auth/presentation/view_model/states.dart';
-import 'package:news_app/features/home/presentation/view_model/cubit.dart';
+import 'package:news_app/features/home/presentation/view/widgets/business_content.dart';
 import 'package:news_app/injection_container.dart' as di;
 
 class HomeBody extends StatelessWidget {
@@ -17,7 +17,7 @@ class HomeBody extends StatelessWidget {
     return Column(
       children: [
         Padding(
-          padding: const EdgeInsets.only(top: 20.0),
+          padding: const EdgeInsets.only(top: 30.0),
           child: CustomAppbar(
             text: 'Breaking News',
             iconButtons: [
@@ -58,10 +58,7 @@ class HomeBody extends StatelessWidget {
             ],
           ),
         ),
-        IndexedStack(
-          index: HomeCubit.get(context).currentIndex,
-          children: HomeCubit.get(context).homecontents,
-        ),
+        BusinessContent(),
       ],
     );
   }
