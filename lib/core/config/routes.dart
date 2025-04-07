@@ -5,6 +5,7 @@ import 'package:news_app/features/auth/presentation/view/login_view.dart';
 import 'package:news_app/features/auth/presentation/view/register_view.dart';
 import 'package:news_app/features/auth/presentation/view_model/cubit.dart';
 import 'package:news_app/features/home/presentation/view/home_view.dart';
+import 'package:news_app/features/home/presentation/view_model/cubit.dart';
 import 'package:news_app/injection_container.dart' as di;
 import 'package:news_app/splash_screen.dart';
 
@@ -20,21 +21,24 @@ class AppRoutes {
     switch (routeSettings.name) {
       case Routes.initialRoute:
         return MaterialPageRoute(
-          builder: ((context) {
+          builder: ((_) {
             return const SplashScreen();
           }),
         );
 
       case Routes.homeRoute:
         return MaterialPageRoute(
-          builder: ((context) {
-            return HomeView();
+          builder: ((_) {
+            return BlocProvider(
+              create: (context) => di.sl<HomeCubit>(),
+              child: HomeView(),
+            );
           }),
         );
 
       case Routes.loginRoute:
         return MaterialPageRoute(
-          builder: ((context) {
+          builder: ((_) {
             return BlocProvider(
               create: ((context) => di.sl<AuthCubit>()),
               child: const LoginView(),
@@ -43,7 +47,7 @@ class AppRoutes {
         );
       case Routes.registerRoute:
         return MaterialPageRoute(
-          builder: ((context) {
+          builder: ((_) {
             return BlocProvider(
               create: ((context) => di.sl<AuthCubit>()),
               child: const RegisterView(),

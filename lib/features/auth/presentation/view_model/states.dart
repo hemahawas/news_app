@@ -21,3 +21,12 @@ class AuthRegisterErrorState extends AuthStates {
 }
 
 class AuthTogglePasswordVisibilityState extends AuthStates {}
+
+class AuthLogOutLoadingState extends AuthStates {}
+
+class AuthLogOutSuccessState extends AuthStates {}
+
+class AuthLogOutErrorState extends AuthStates {
+  final String error;
+  AuthLogOutErrorState(this.error);
+}
