@@ -1,16 +1,56 @@
-# news_app
+# News App
 
-A new Flutter project.
+A modern, cross-platform News App built with Flutter that delivers the latest headlines and personalized news feeds. This app fetches news data from a REST API and supports search functionality.
 
-## Getting Started
+---
 
-This project is a starting point for a Flutter application.
+## Features
 
-A few resources to get you started if this is your first Flutter project:
+- **Latest News Feed**: Browse trending headlines from various categories
+- **Search Functionality**: Find articles by keywords or topics.
+- **Responsive UI**: Optimized for various screen sizes
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+---
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Tech Stack
+- **Flutter (Dart)**: Cross-platform UI framework.
+- **Bloc/Cubit**: State management for clean architecture.
+- **REST API**: Fetch real-time news data.
+- **Firebase**: Authentication for login and register.
+- **Dependency Injection**: provide a service locator using get_it
+- **MVVM (Model-View-ViewModel)**: Clean code and well structure
+
+---
+
+## Setup & Installation
+
+Follow these steps to get the app up and running on your machine:
+
+1. **Clone the repository**
+    ```sh
+    git clone https://github.com/hemahawas/news_app.git
+    ```
+
+2. **Navigate to the project directory**
+    ```sh
+    cd news_app
+    ```
+    
+3. **Install dependencies**
+    ```sh
+    flutter pub get
+    ```
+
+4. **Run the app**
+    ```sh
+    flutter run
+    ```
+---
+
+## Directory Structure
+
+```plaintext
+lib/
+├── core/        
+
+  
