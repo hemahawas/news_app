@@ -21,14 +21,14 @@ class AppRoutes {
     switch (routeSettings.name) {
       case Routes.initialRoute:
         return MaterialPageRoute(
-          builder: ((context) {
+          builder: ((_) {
             return const SplashScreen();
           }),
         );
 
       case Routes.homeRoute:
         return MaterialPageRoute(
-          builder: ((context) {
+          builder: ((_) {
             return BlocProvider(
               create: (context) => di.sl<HomeCubit>(),
               child: HomeView(),
@@ -38,7 +38,7 @@ class AppRoutes {
 
       case Routes.loginRoute:
         return MaterialPageRoute(
-          builder: ((context) {
+          builder: ((_) {
             return BlocProvider(
               create: ((context) => di.sl<AuthCubit>()),
               child: const LoginView(),
@@ -47,7 +47,7 @@ class AppRoutes {
         );
       case Routes.registerRoute:
         return MaterialPageRoute(
-          builder: ((context) {
+          builder: ((_) {
             return BlocProvider(
               create: ((context) => di.sl<AuthCubit>()),
               child: const RegisterView(),
