@@ -2,6 +2,8 @@
 
 A modern, cross-platform News App built with Flutter that delivers the latest headlines and personalized news feeds. This app fetches news data from a REST API and supports search functionality.
 
+
+![App Preview](https://themindstudios.com/blog/content/images/2019/08/Breaking-News.jpg)
 ---
 
 ## Features
@@ -52,5 +54,26 @@ Follow these steps to get the app up and running on your machine:
 ```plaintext
 lib/
 ├── core/        
-
-  
+|    ├── api
+|    ├── config
+|    ├── constants
+|    ├── errors
+|    ├── shared_widgets
+|    ├── utils
+|
+├── faetures/
+|    ├── auth
+|        ├── data
+|            ├── model
+|            ├── repo
+|        ├── presentation
+|            ├── view
+|            ├── view_model
+|    ├── home
+|        ├── data
+|            ├── model
+|            ├── repo
+|        ├── presentation
+|            ├── view
+|            ├── view_model
+```
